@@ -1,0 +1,145 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #2d3549;
+}
+
+nav.navigation {
+  position: fixed;
+  inset: 20px 0 20px 20px;
+  width: 75px;
+  height: 50vh;
+  background-color: #fff;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+nav .menuToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 23px;
+}
+nav .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transform: translateY(-8px);
+  transition: 0.5s;
+}
+nav .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transform: translateY(8px);
+  transition: 0.5s;
+  box-shadow: 0 -8px 0 #333;
+}
+
+nav.open .menuToggle::before {
+  transform: translateY(0) rotate(45deg);
+}
+nav.open .menuToggle::after {
+  transform: translateY(0) rotate(-45deg);
+  box-shadow: 0 0 0 #333;
+}
+
+nav.open {
+  width: 250px;
+}
+nav.open ul li.active {
+  transform: translateX(0);
+}
+nav.open a .text {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+nav ul li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+nav ul li.active {
+  transform: translateX(30px);
+}
+nav ul li.active a .icon {
+  color: #fff;
+  background-color: var(--clr);
+}
+nav ul li.active a .icon::before {
+  opacity: 0.5;
+}
+nav ul li.active a .text {
+  color: var(--clr);
+}
+nav ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  text-decoration: none;
+}
+nav ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 55px;
+  height: 55px;
+  line-height: 60px;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-size: 1.75em;
+  color: #222;
+}
+nav ul li a .icon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  filter: blur(8px);
+  opacity: 0;
+  transition: 0.5s;
+}
+nav ul li a .text {
+  position: relative;
+  padding: 0 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+}/*# sourceMappingURL=styles.css.map */
